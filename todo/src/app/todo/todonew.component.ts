@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Todo } from './todo.interface';
 
 @Component({
@@ -7,9 +7,14 @@ import { Todo } from './todo.interface';
 })
 export class TodoNewComponent {
 
+  @Output() todoCreated: EventEmitter<Todo> = new EventEmitter<Todo>();
   private todoName: string = '';
 
   addTodo() {
-    console.log(this.todoName);
+    this.todoCreated.emit({
+      name: this.todoName,
+      done: false
+    });
+    this.todoName = '';
   }
 }

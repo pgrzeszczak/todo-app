@@ -14,4 +14,8 @@ export class AppComponent {
     {name: "Zrobiony todos", done: true},
     {name: "Totalnie inny todos", done: false}
   ];
+
+  addTodoToList(todo: Todo) {
+    this.TODOS.push(todo);
+  }
 }
