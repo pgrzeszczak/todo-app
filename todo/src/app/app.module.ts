@@ -6,10 +6,11 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo/todolist.component';
+import { TodoNewComponent } from './todo/todonew.component';
 
 @NgModule({
   declarations: [
-    AppComponent, TodoListComponent
+    AppComponent, TodoListComponent, TodoNewComponent
   ],
   imports: [
     BrowserModule,
