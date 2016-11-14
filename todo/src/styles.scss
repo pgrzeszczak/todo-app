@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+.todo-done {
+  opacity: 0.25;
+  text-decoration: line-through;
+  font-style: italic;
+}
