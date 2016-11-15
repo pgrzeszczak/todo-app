@@ -21,7 +21,11 @@ export class TodoListComponent {
   }
 
   delete(todo: Todo) {
-    this.removeTodo.emit(todo);
+    this.todoService.delete(todo).subscribe((deletedTodo) => {
+      this.removeTodo.emit(deletedTodo);
+    }, (response) => {
+      console.log("Błąd :(", response);
+    });
   }
 
 }

@@ -23,18 +23,10 @@ export class AppComponent implements OnInit {
   }
 
   addTodoToList(todo: Todo) {
-    this.todoService.create(todo).subscribe((createdTodo) => {
-      this.todos.push(createdTodo);
-    }, (response) => {
-      console.log("Błąd :(", response);
-    });
+    this.todos.push(todo);
   }
 
   removeTodoFromList(todo: Todo) {
-    this.todoService.delete(todo).subscribe((deletedTodo) => {
-      _.remove(this.todos, {id: todo.id});
-    }, (response) => {
-      console.log("Błąd :(", response);
-    });
+    _.remove(this.todos, {id: todo.id});
   }
 }
