@@ -18,4 +18,9 @@ export class TodoService {
     return this.http.post(this.backendUrl + '/todo', todo)
       .map((result) => result.json());
   }
+
+  update(todo: Todo): Observable<Todo> {
+    return this.http.put(`${this.backendUrl}/todo/${todo.id}`, todo)
+      .map((result) => result.json());
+  }
 }

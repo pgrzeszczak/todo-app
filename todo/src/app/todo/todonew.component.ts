@@ -12,8 +12,7 @@ export class TodoNewComponent {
 
   addTodo() {
     this.todoCreated.emit({
-      name: this.todoName,
-      done: false
+      name: this.todoName
     });
     this.todoName = '';
   }

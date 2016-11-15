@@ -1,6 +1,6 @@
 <md-list>
   <md-list-item *ngFor="let todo of todos">
     <h3 md-line [class.todo-done]="todo.done">{{todo.name}}</h3>
-    <md-checkbox [(ngModel)]="todo.done"></md-checkbox>
+    <md-checkbox [(ngModel)]="todo.done" (change)="update(todo)"></md-checkbox>
   </md-list-item>
 </md-list>
