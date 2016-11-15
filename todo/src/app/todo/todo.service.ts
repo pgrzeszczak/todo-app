@@ -23,4 +23,9 @@ export class TodoService {
     return this.http.put(`${this.backendUrl}/todo/${todo.id}`, todo)
       .map((result) => result.json());
   }
+
+  delete(todo: Todo): Observable<Todo> {
+    return this.http.delete(`${this.backendUrl}/todo/${todo.id}`)
+      .map((result) => result.json());
+  }
 }

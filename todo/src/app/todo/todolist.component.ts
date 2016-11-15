@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from './todo.interface';
 import { TodoService } from './todo.service';
 
@@ -8,6 +8,7 @@ import { TodoService } from './todo.service';
 })
 export class TodoListComponent {
   @Input() todos: Todo[];
+  @Output() removeTodo: EventEmitter<Todo> = new EventEmitter<Todo>();
 
   constructor(private todoService: TodoService) {}
 
@@ -18,4 +19,9 @@ export class TodoListComponent {
       console.log("Błąd :(", response);
     });
   }
+
+  delete(todo: Todo) {
+    this.removeTodo.emit(todo);
+  }
+
 }

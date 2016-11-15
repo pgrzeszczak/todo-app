@@ -2,5 +2,6 @@
   <md-list-item *ngFor="let todo of todos">
     <h3 md-line [class.todo-done]="todo.done">{{todo.name}}</h3>
     <md-checkbox [(ngModel)]="todo.done" (change)="update(todo)"></md-checkbox>
+    <button md-raised-button color="warn" (click)="delete(todo)">Remove</button>
   </md-list-item>
 </md-list>
