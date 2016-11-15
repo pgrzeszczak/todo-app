@@ -4,7 +4,7 @@
     {{title}}
   </md-toolbar>
 
-  <todo-list [todos]="TODOS"></todo-list>
+  <todo-list [todos]="todos"></todo-list>
   <todo-new (todoCreated)="addTodoToList($event)"></todo-new>
 
 </md-sidenav-layout>

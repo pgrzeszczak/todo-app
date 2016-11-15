@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo/todolist.component';
 import { TodoNewComponent } from './todo/todonew.component';
 
+import { TodoService } from './todo/todo.service';
+
 @NgModule({
   declarations: [
     AppComponent, TodoListComponent, TodoNewComponent
@@ -18,7 +20,7 @@ import { TodoNewComponent } from './todo/todonew.component';
     HttpModule,
     MaterialModule.forRoot()
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
